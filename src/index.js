@@ -8,13 +8,17 @@ import { Segment } from 'semantic-ui-react';
 import './index.css'
 
 ReactDOM.render(
-  <h1>Hello Dolly</h1>,
-  // <Router>
-  //   <Segment inverted>
-  //     <App />
-  //   </Segment>
-  // </Router>,
+  <Segment inverted>
+    <App />
+  </Segment>,
   document.getElementById('root'));
+
+// <Router>
+//   <Segment inverted>
+//     <App />
+//   </Segment>
+// </Router>,
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
