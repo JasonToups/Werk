@@ -19,7 +19,7 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     axios
-      .post(`${process.env.REACT_APP_API_URL}/login`, this.state, { withCredentials: true })
+      .post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state)
       .then(res => {
         console.log(res);
         this.close()
@@ -28,7 +28,7 @@ class Login extends Component {
 
       })
       .catch(err => {
-        console.log(err.response);
+        console.log(err);
       })
   };
 
@@ -47,13 +47,9 @@ class Login extends Component {
         <Modal open={this.state.show} onClose={this.close}>
           <Modal.Header>Log In!</Modal.Header>
           <Modal.Content Form>
-            <Modal.Description>
-              <p>Sign Up!</p>
-            </Modal.Description>
             <div className='container mt-4'>
               <div className='row'>
                 <div className='col-md-4 offset-md-4'>
-                  <h4 className='mb-3'>Log in</h4>
                   <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                       <label htmlFor='name'>Email</label>

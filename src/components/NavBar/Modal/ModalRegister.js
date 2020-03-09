@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Modal, Form, } from 'semantic-ui-react';
 import axios from 'axios'
-// import { render } from '@testing-library/react';
-
-
-//TODO import .env to use this variable. 
 
 class Register extends Component {
   state = {
