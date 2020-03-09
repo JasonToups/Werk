@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar></NavBar>
       <Header inverted as='h1' className="App-header">
-        Hello Dolly
+        Hey Queen
       </Header>
       <Container>
         Here's the place for the Homepage
