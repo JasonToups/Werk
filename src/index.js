@@ -5,12 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import { Segment } from 'semantic-ui-react';
-import './index.css'
+import './index.css';
 
 ReactDOM.render(
-  <Segment inverted>
-    <App />
-  </Segment>,
+  <Router>
+    <Segment inverted>
+      <App />
+    </Segment>
+  </Router>,
   document.getElementById('root'));
 
 // <Router>

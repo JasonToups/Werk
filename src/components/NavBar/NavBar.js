@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Menu, Image } from 'semantic-ui-react';
-// import Register from './Modal/ModalRegister';
-// import Login from './Modal/ModalLogin';
+import Register from './Modal/ModalRegister';
+import Login from './Modal/ModalLogin';
 import logo from './Werk-Logo.svg';
 
 class NavBar extends Component {
@@ -61,13 +61,11 @@ class NavBar extends Component {
               <>
 
                 <Menu.Item>
-                  You
-                  {/* < Register /> */}
+                  < Register />
                 </Menu.Item>
 
                 <Menu.Item>
-                  Bettah
-                  {/* < Login setCurrentUser={this.props.setCurrentUser} /> */}
+                  < Login setCurrentUser={this.props.setCurrentUser} />
                 </Menu.Item>
 
               </>
