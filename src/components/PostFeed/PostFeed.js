@@ -1,7 +1,6 @@
 import React from "react";
 import Post from "./Post/Post";
 import axios from "axios";
-
 class PostFeed extends React.Component {
   state = {
     posts: [],
