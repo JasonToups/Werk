@@ -23,14 +23,34 @@
 	width: 100%;
 	text-align: left;
 	padding: 1em;
+	display: flex;
+	justify-content: space-between;
 }
 
 .post-header h3 {
 	font-family: var(--post-header-font);
+	display: inline;
 	font-size: 2em;
+}
+
+.post-header-icons {
+	display: inline-block;
+	width: max-content;
 }
 
 .post-body p {
 	font-family: var(--post-body-font);
 	font-size: 2em;
+}
+
+.post-body {
+	overflow: hidden;
+	height: 0;
+}
+
+.show {
+	height: max-content;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 }
