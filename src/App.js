@@ -39,12 +39,6 @@ class App extends Component {
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
             logout={this.logout}></NavBar>
-          <Header inverted as='h1' className="App-header">
-            Hey Queen
-          </Header>
-          <Container>
-            Here's the place for the Homepage
-          </Container>
           <PostFeed />
         </div>
       </>

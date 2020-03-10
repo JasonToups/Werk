@@ -18,8 +18,7 @@ const Post = props => {
       </div>
 
       <div className="post-body">
-
-        <p className="post-snippet">{description}</p>
+        <p>{description}</p>
       </div>
     </section>
   );
