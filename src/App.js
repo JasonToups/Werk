@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Header, Container } from 'semantic-ui-react';
 
 import NavBar from './components/NavBar/NavBar'
+import PostFeed from './components/PostFeed/PostFeed'
 import './App.css';
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
           <Container>
             Here's the place for the Homepage
           </Container>
+          <PostFeed />
         </div>
       </>
     )
