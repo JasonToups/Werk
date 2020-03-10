@@ -1,0 +1,36 @@
+.post-container {
+	box-sizing: border-box;
+	width: var(--content-width);
+	margin: 0 auto;
+}
+
+.post-image-container {
+	position: relative;
+	width: 100%;
+}
+
+.post-image {
+	width: 100%;
+	height: var(--post-image-height);
+	object-fit: cover;
+	object-position: top;
+}
+
+.post-header {
+	position: absolute;
+	bottom: 0;
+	background-color: #2f2f2f80;
+	width: 100%;
+	text-align: left;
+	padding: 1em;
+}
+
+.post-header h3 {
+	font-family: var(--post-header-font);
+	font-size: 2em;
+}
+
+.post-body p {
+	font-family: var(--post-body-font);
+	font-size: 2em;
+}
