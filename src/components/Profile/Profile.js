@@ -32,8 +32,21 @@ class Profile extends Component {
 
   render() {
     console.log("render profile")
+    console.log(this.state.profile)
     return (
-      <h1>Profile Page</h1>
+      <>
+        <h1>Profile Page</h1>
+        <img src={this.state.profile.userImage}></img>
+        <p>Name: {this.state.profile.name}</p>
+        <p>Type: {this.state.profile.userType}</p>
+        <p>Email: {this.state.profile.email}</p>
+        <p>HomeCity: {this.state.profile.homeCity}</p>
+        <h1>Gig Requirements</h1>
+        <p>Gig Appearance Fee:{this.state.profile.gigAppearanceFee}</p>
+        <p>Gig Performance Fee:{this.state.profile.gigPerformanceFee}</p>
+        <p>Gig Fee Total:{this.state.profile.gigFeeTotal}</p>
+        <p>Gig Requirement Description: {this.state.profile.gigRequirementDescription}</p>
+      </>
     )
   }
 }
