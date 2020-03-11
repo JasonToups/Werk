@@ -8,10 +8,13 @@ class ProfileModal extends Component {
     name: "",
     userType: "",
     email: "",
+    password: "",
+    password2: "",
     homeCity: "",
     gigAppearanceFee: "",
     gigPerformanceFee: "",
-    gigRequirementDescription: ""
+    gigRequirementDescription: "",
+    show: false,
   }
 
   handleChange = event => {
@@ -20,15 +23,19 @@ class ProfileModal extends Component {
     });
   }; // makes the form fillable
 
-  //TODO change this path for user with userID
+  handleRadioChange = (e, { value }) => this.setState({ userType: value })
+
   handleSubmit = event => {
+    const userId = localStorage.getItem('uid');
+
     event.preventDefault()
     console.log(this.state)
-    axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${userId}`, this.state)
       .then(res => {
         console.log(res);
         this.close()
-        this.props.history.push('/login');
+        // what's this?
+        this.props.history.push('/profile');
       }).catch(err => {
         console.log(err.response);
       }); // on submit
@@ -45,7 +52,7 @@ class ProfileModal extends Component {
   render() {
     return (
       <>
-        <Button onClick={this.open}> Edit your profile!</Button>
+        <button className="profile-edit" onClick={this.open}> Edit your profile!</button>
         <Modal open={this.state.show} onClose={this.close}>
           <Modal.Header>Edit your profile!</Modal.Header>
           <Modal.Content Form>
@@ -53,21 +60,19 @@ class ProfileModal extends Component {
               <div className='row'>
                 <div className='col-md-4 offset-md-4'>
                   <Form onSubmit={this.handleSubmit}>
-                    <Form.Group inline>
+                    <Form.Group inline required>
                       <label>User Type</label>
                       <Form.Radio
                         label='Queen'
                         value='Queen'
-                        id='userType'
-                        checked={value === 'Queen'}
-                        onChange={this.handleChange}
+                        checked={this.state.userType === 'Queen'}
+                        onChange={this.handleRadioChange}
                       />
                       <Form.Radio
                         label='Fan'
                         value='Fan'
-                        id='userType'
-                        checked={value === 'Fan'}
-                        onChange={this.handleChange}
+                        checked={this.state.userType === 'Fan'}
+                        onChange={this.handleRadioChange}
                       />
                     </Form.Group>
 
@@ -134,4 +139,4 @@ class ProfileModal extends Component {
 
 
 
-export default Register;
+export default ProfileModal;

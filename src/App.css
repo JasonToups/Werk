@@ -11,3 +11,8 @@
 	text-align: center;
 	width: 100%;
 }
+
+body {
+	min-height: 800px;
+	background-color: #1a1a1b;
+}
