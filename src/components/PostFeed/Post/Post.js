@@ -2,6 +2,7 @@ import React, { Form, Button, Component } from "react";
 import { Link } from "react-router-dom";
 import "./Post.css";
 import dollarEmpty from './dollar-empty.svg';
+import dollarFilled from './dollar-filled.svg';
 import heartEmpty from './heart-empty.svg';
 import heartFilled from './heart-filled.svg';
 
@@ -43,7 +44,7 @@ class Post extends Component {
             </h3>
             <div className="post-header-icons">
               <img
-                src={dollarEmpty}
+                src={`${this.state.show ? dollarFilled : dollarEmpty}`}
                 onClick={this.toggleShow}></img>
               <img
                 className="favorite"
