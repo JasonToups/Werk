@@ -52,6 +52,7 @@ class Profile extends Component {
           </div>
           : ''}
         <div className="profile-info">
+          <hr></hr>
           <h1>Name: <span>{this.state.profile.name}</span></h1>
           <h3>Type: {this.state.profile.userType}</h3>
           <h3>Email: {this.state.profile.email}</h3>
@@ -59,10 +60,11 @@ class Profile extends Component {
         </div>
         {this.state.profile.userType === "Queen" ? (
           <div className="profile-gig-requirements">
+            <hr></hr>
             <h1>Gig Requirements</h1>
-            <h3>Gig Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
-            <h3>Gig Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
-            <h3>{this.state.profile.gigRequirementDescription}</h3>
+            <h3>Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
+            <h3>Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
+            <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
           </div>
         ) : ''}
       </>

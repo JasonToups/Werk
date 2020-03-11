@@ -30,6 +30,10 @@ class NavBar extends Component {
             {this.props.currentUser ? (
               <>
                 <Menu.Item
+                  name='create post'
+                />
+
+                <Menu.Item
                   name='profile'
                   onClick={this.handleItemClick}
                 >
