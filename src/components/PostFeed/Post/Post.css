@@ -22,7 +22,7 @@
 	background-color: #2f2f2f80;
 	width: 100%;
 	text-align: left;
-	padding: 1em;
+	padding: 0.5em 1em;
 	display: flex;
 	justify-content: space-between;
 }
@@ -31,6 +31,7 @@
 	font-family: var(--post-header-font);
 	display: inline;
 	font-size: 2em;
+	margin: auto 0;
 }
 
 .post-header-icons {
@@ -38,14 +39,8 @@
 	width: max-content;
 }
 
-.post-body p {
-	font-family: var(--post-body-font);
-	font-size: 2em;
-}
-
-.post-body {
-	overflow: hidden;
-	height: 0;
+.post-header-icons img {
+	padding: 0 0.5em;
 }
 
 .show {
@@ -53,4 +48,14 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 10px;
+}
+
+.post-body {
+	overflow: hidden;
+	height: 0;
+}
+
+.post-body p {
+	font-family: var(--post-body-font);
+	font-size: 2em;
 }
