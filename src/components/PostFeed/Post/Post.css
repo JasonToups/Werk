@@ -56,8 +56,21 @@
 	overflow: hidden;
 	height: 0;
 }
+.post-tip {
+	/* overflow: hidden;
+	height: 0; */
+}
 
 .post-body p {
 	font-family: var(--post-body-font);
 	font-size: 2em;
+	padding: 0 40px;
+}
+.button-container {
+	/* display: flex; */
+}
+.post-buttons {
+	width: 100px;
+	margin: 0 25px;
+	font-size: 1.25em;
 }

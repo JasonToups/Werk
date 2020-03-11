@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Form, Button } from "react";
 import { Link } from "react-router-dom";
 import "./Post.css";
-import dollarEmpty from './dollar-empty.svg'
-import heartEmpty from './heart-empty.svg'
+import dollarEmpty from './dollar-empty.svg';
+import heartEmpty from './heart-empty.svg';
 
 // TODO Object Fit - I need to put the image in a fixed-width div. Then on the image itself, put the object-fit styling.
 
@@ -22,11 +22,28 @@ const Post = props => {
           </div>
         </div>
       </div>
-      <div className="post-body">
+      <div className="post-body show">
         <p>{description}</p>
+        <div className="button-container">
+          <button className="post-buttons">tip</button>
+          <button className="post-buttons">book</button>
+        </div>
       </div>
-    </section>
+      <div className="post-tip show">
+        <h2>Tip your Queen</h2>
+        <input type="text" placeholder='tips'></input>
+        <button type='submit'>Submit</button>
+      </div>
+    </section >
   );
 };
 
 export default Post;
+
+{/* <Form>
+          <Form.Field>
+            <label>Tip your Queen</label>
+            <input placeholder='tips' />
+          </Form.Field>
+          <Button type='submit'>Submit</Button>
+        </Form> */}

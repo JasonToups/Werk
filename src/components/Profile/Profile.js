@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 class Profile extends Component {
   state = {
@@ -15,7 +16,7 @@ class Profile extends Component {
         console.log(res);
         this.setState({
           profile: res.data.data,
-          posts: postSeed
+          // posts: postSeed
         })
       })
       .catch(err => {
@@ -30,6 +31,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log("render profile")
     return (
       <h1>Profile Page</h1>
     )

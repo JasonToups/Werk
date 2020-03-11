@@ -15,7 +15,7 @@ class NavBar extends Component {
   handleItemClick = (e, props) => this.setState({ activeItem: props.name })
 
   render = props => {
-    console.log(this.props)
+    // console.log(this.props)
     const { activeItem } = this.state
     return (
       <div className='navbar'>
