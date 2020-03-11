@@ -57,8 +57,8 @@
 	height: 0;
 }
 .post-tip {
-	/* overflow: hidden;
-	height: 0; */
+	overflow: hidden;
+	height: 0;
 }
 
 .post-body p {
@@ -69,8 +69,13 @@
 .button-container {
 	/* display: flex; */
 }
-.post-buttons {
+.post-button-book {
 	width: 100px;
-	margin: 0 25px;
+	margin: 0px 25px;
+	font-size: 1.25em;
+}
+.post-button-tip {
+	width: 100px;
+	margin: 0 25px 0 0;
 	font-size: 1.25em;
 }

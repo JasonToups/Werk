@@ -36,7 +36,6 @@ class App extends Component {
     return (
       <>
         <div className="App" >
-
           <NavBar
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
@@ -45,7 +44,6 @@ class App extends Component {
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
           />
-          {/* <PostFeed /> */}
         </div>
       </>
     )
