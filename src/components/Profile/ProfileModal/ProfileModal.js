@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import { Button, Modal, Form, } from 'semantic-ui-react';
 import axios from 'axios'
 
-class Register extends Component {
+class ProfileModal extends Component {
   state = {
-    userType: '',
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
-    show: false
-  };
+    userImage: "",
+    name: "",
+    userType: "",
+    email: "",
+    homeCity: "",
+    gigAppearanceFee: "",
+    gigPerformanceFee: "",
+    gigRequirementDescription: ""
+  }
 
   handleChange = event => {
     this.setState({
@@ -18,9 +20,7 @@ class Register extends Component {
     });
   }; // makes the form fillable
 
-  handleRadioChange = (e, { value }) => this.setState({ userType: value })
-
-
+  //TODO change this path for user with userID
   handleSubmit = event => {
     event.preventDefault()
     console.log(this.state)
@@ -45,30 +45,33 @@ class Register extends Component {
   render() {
     return (
       <>
-        <Button onClick={this.open}> Sign Up!</Button>
+        <Button onClick={this.open}> Edit your profile!</Button>
         <Modal open={this.state.show} onClose={this.close}>
-          <Modal.Header>Register for an Account!</Modal.Header>
+          <Modal.Header>Edit your profile!</Modal.Header>
           <Modal.Content Form>
             <div className='container mt-4'>
               <div className='row'>
                 <div className='col-md-4 offset-md-4'>
-                  <Form onSubmit={this.handleSubmit} >
-                    <Form.Group inline required>
+                  <Form onSubmit={this.handleSubmit}>
+                    <Form.Group inline>
                       <label>User Type</label>
                       <Form.Radio
                         label='Queen'
                         value='Queen'
-                        checked={this.state.userType === 'Queen'}
-                        onChange={this.handleRadioChange}
+                        id='userType'
+                        checked={value === 'Queen'}
+                        onChange={this.handleChange}
                       />
                       <Form.Radio
                         label='Fan'
                         value='Fan'
-                        checked={this.state.userType === 'Fan'}
-                        onChange={this.handleRadioChange}
+                        id='userType'
+                        checked={value === 'Fan'}
+                        onChange={this.handleChange}
                       />
                     </Form.Group>
-                    <Form.Field required>
+
+                    <Form.Field>
                       <label htmlFor='name'>Name</label>
                       <input
                         onChange={this.handleChange}
@@ -79,7 +82,7 @@ class Register extends Component {
                         value={this.state.name}
                       />
                     </Form.Field>
-                    <Form.Field required>
+                    <Form.Field>
                       <label htmlFor='name'>Email</label>
                       <input
                         onChange={this.handleChange}
@@ -90,7 +93,7 @@ class Register extends Component {
                         value={this.state.email}
                       />
                     </Form.Field>
-                    <Form.Field required>
+                    <Form.Field>
                       <label htmlFor='name'>Password</label>
                       <input
                         onChange={this.handleChange}
@@ -101,7 +104,7 @@ class Register extends Component {
                         value={this.state.password}
                       />
                     </Form.Field>
-                    <Form.Field required>
+                    <Form.Field>
                       <label htmlFor='password2'>Confirm Password</label>
                       <input
                         onChange={this.handleChange}

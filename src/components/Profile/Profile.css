@@ -1,0 +1,20 @@
+.profile-image-container {
+	position: relative;
+	width: 50%;
+}
+
+.profile-image {
+	width: 100%;
+	height: var(--post-image-height);
+	object-fit: cover;
+	object-position: top;
+	float: left;
+}
+
+.profile-info {
+	/* display: flex; */
+	/* float: right; */
+}
+
+.profile-gig-requirements {
+}
