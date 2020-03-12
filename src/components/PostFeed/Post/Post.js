@@ -1,19 +1,18 @@
-import React, { Form, Button, Component } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Button, Form, Input } from "semantic-ui-react";
 import "./Post.css";
 import dollarEmpty from './dollar-empty.svg';
 import dollarFilled from './dollar-filled.svg';
 import heartEmpty from './heart-empty.svg';
 import heartFilled from './heart-filled.svg';
-
-// TODO Object Fit - I need to put the image in a fixed-width div. Then on the image itself, put the object-fit styling.
+import GigCreate from '../../Gig/GigCreate/GigCreate';
 
 class Post extends Component {
   state = {
     show: false,
     favorite: false
   }
-  // TODO look at facer for toggle method
   toggleShow = () => {
     this.setState({
       show: this.state.show ? this.state.show = false : this.state.show = true
@@ -56,12 +55,14 @@ class Post extends Component {
         <div className={`post-body ${this.state.show ? 'show' : ''}`}>
           <p>{description}</p>
           <div className="button-container">
-            <input type="text" placeholder='tip your queen'></input>
-            <button
+            <Input
+              type="number"
+              placeholder='tip your queen' />
+            <Button
               className="post-button-tip"
-              type='submit'>tip</button>
-            {/* <button className="post-buttons">tip</button> */}
-            <button className="post-button-book">book</button>
+              type='submit'
+              color='red'>tip</Button>
+            <GigCreate />
           </div>
         </div>
       </section >

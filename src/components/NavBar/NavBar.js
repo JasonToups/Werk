@@ -59,7 +59,7 @@ class NavBar extends Component {
                   <Button
                     icon
                     color='black'
-                    onClick={this.open}>
+                    onClick={this.handleItemClick}>
                     <Icon
                       size='large'
                       name="mail" />
@@ -84,7 +84,8 @@ class NavBar extends Component {
                     < Register />
                   </Menu.Item>
                   <Menu.Item>
-                    < Login setCurrentUser={this.props.setCurrentUser} />
+                    < Login
+                      setCurrentUser={this.props.setCurrentUser} />
                   </Menu.Item>
                 </>
               )}

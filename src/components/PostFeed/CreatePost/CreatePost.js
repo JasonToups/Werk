@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Modal, Form, Input, Icon } from 'semantic-ui-react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+
 import '../../NavBar/Modal/Modal.css';
 
 class CreatePost extends Component {
@@ -69,7 +70,9 @@ class CreatePost extends Component {
           icon
           color='green'
           onClick={this.open}><Icon name="plus" /></Button>
-        <Modal open={this.state.show} onClose={this.close}>
+        <Modal
+          open={this.state.show}
+          onClose={this.close}>
           <Modal.Header>Create a Post!</Modal.Header>
           <Modal.Content Form>
             <div className='container mt-4'>

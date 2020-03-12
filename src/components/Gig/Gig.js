@@ -4,6 +4,7 @@ import dollarEmpty from './dollar-empty.svg';
 import dollarFilled from './dollar-filled.svg';
 import heartEmpty from './heart-empty.svg';
 import heartFilled from './heart-filled.svg';
+import { Modal } from "semantic-ui-react";
 
 class Gig extends Component {
   state = {
@@ -28,7 +29,9 @@ class Gig extends Component {
   render() {
     const { _id, image, name, description } = this.props.post;
     return (
-      <h1>Gig</h1>
+      <Modal>
+        <h1>Gig</h1>
+      </Modal>
     );
   }
 };
