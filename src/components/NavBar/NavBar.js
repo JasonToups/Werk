@@ -6,6 +6,7 @@ import axios from "axios";
 // internal imports
 import Register from './Modal/ModalRegister';
 import Login from './Modal/ModalLogin';
+import CreatePost from '../PostFeed/CreatePost/CreatePost';
 import logo from './Werk-Logo.svg';
 import './NavBar.css';
 
@@ -50,9 +51,9 @@ class NavBar extends Component {
             {this.props.currentUser ? (
               <>
                 {this.state.userType === "Queen" ? (
-                  <Menu.Item
-                    name='create post'
-                  />
+                  <Menu.Item>
+                    <CreatePost />
+                  </Menu.Item>
                 ) : ''}
                 <Menu.Item
                   name='profile'

@@ -1,0 +1,128 @@
+import React, { Component } from 'react'
+import { Button, Modal, Form, } from 'semantic-ui-react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import '../../NavBar/Modal/Modal.css';
+
+class CreatePost extends Component {
+  state = {
+    user_submitted_from: '',
+    name: '',
+    description: '',
+    image: '',
+    show: false,
+  };
+
+
+  componentDidMount() {
+    const userId = localStorage.getItem('uid');
+
+    axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        this.setState({
+          user_submitted_from: userId,
+          name: res.data.data.name,
+        })
+        console.log(this.state.user_submitted_from)
+        console.log(this.state.name)
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/posts`, this.state, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        this.close()
+        this.props.setCurrentUser(res.data.data)
+        this.props.history.push('/');
+
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
+  };
+
+  open = () => {
+    this.setState({ show: true })
+  }
+
+  close = () => {
+    this.setState({ show: false })
+  }
+
+  render() {
+    return (
+      <>
+        <Button onClick={this.open}> Create Post</Button>
+        <Modal open={this.state.show} onClose={this.close}>
+          <Modal.Header>Create a Post!</Modal.Header>
+          <Modal.Content Form>
+            <div className='container mt-4'>
+              <div className='row'>
+                <div className='col-md-4 offset-md-4'>
+                  <Form onSubmit={this.handleSubmit}>
+                    <Form.Field>
+                      <label htmlFor='name'>Name</label>
+                      <input
+                        onChange={this.handleChange}
+                        type='string'
+                        id='name'
+                        className='form-control form-control-lg'
+                        name='name'
+                        value={this.state.name}
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <label htmlFor='image'>Image URL</label>
+                      <input
+                        onChange={this.handleChange}
+                        type='string'
+                        id='image'
+                        className='form-control form-control-lg'
+                        name='image'
+                        placeholder='Enter an image URL'
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <label htmlFor='description'>Description</label>
+                      <input
+                        onChange={this.handleChange}
+                        type='string'
+                        id='description'
+                        className='form-control form-control-lg'
+                        name='description'
+                        placeholder='Enter a description'
+                      />
+                    </Form.Field>
+                  </Form>
+                </div>
+              </div>
+            </div>
+          </Modal.Content>
+          <Modal.Actions>
+            <button className='btn btn-primary float-right' onClick={this.handleSubmit}>
+              Create Post
+              </button>
+          </Modal.Actions>
+        </Modal>
+      </>
+    );
+  }
+}
+
+
+
+
+export default withRouter(CreatePost);
