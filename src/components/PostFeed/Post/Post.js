@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, Form, Input } from "semantic-ui-react";
+import axios from "axios";
 import "./Post.css";
 import dollarEmpty from './dollar-empty.svg';
 import dollarFilled from './dollar-filled.svg';
@@ -24,6 +25,19 @@ class Post extends Component {
       favorite: this.state.favorite ? this.state.favorite = false : this.state.favorite = true
     })
   }
+
+  deletePost = (id) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/posts/${id}`, { withCredentials: true })
+      .then(res => {
+        console.log(`axios response`, res);
+        this.props.getPosts();
+        // console.log(`state.posts:`, this.state.posts);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   render() {
     const { _id, image, name, description } = this.props.post;
@@ -63,6 +77,8 @@ class Post extends Component {
                 type='submit'
                 color='red'>tip</Button>
               {this.state.show && <GigCreate user_submitted_from={this.props.post.user_submitted_from} />}
+              <Button
+                onClick={() => this.deletePost(_id)}>Delete</Button>
             </div>
           </> : <p>Login in to Book a Queen!</p>}
         </div>
@@ -72,11 +88,3 @@ class Post extends Component {
 };
 
 export default Post;
-
-{/* <Form>
-          <Form.Field>
-            <label>Tip your Queen</label>
-            <input placeholder='tips' />
-          </Form.Field>
-          <Button type='submit'>Submit</Button>
-        </Form> */}

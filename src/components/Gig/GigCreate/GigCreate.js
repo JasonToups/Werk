@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import { Button, Modal, Form, Input, Icon } from "semantic-ui-react";
+import { Button, Modal, Form, Input, Radio } from "semantic-ui-react";
 
 class GigCreate extends Component {
   state = {
@@ -93,7 +93,6 @@ class GigCreate extends Component {
 
 
   render() {
-    // console.log(this.props.user_submitted_from)
     //TODO store the queen's id in State, and make an axios call for their profile, and grab the info from there.
     return (
       <>
@@ -104,7 +103,7 @@ class GigCreate extends Component {
         <Modal
           open={this.state.show}
           onClose={this.close}>
-          <Modal.Header>Book a Queen!</Modal.Header>
+          <Modal.Header>Book {this.state.name_of_queen}!</Modal.Header>
           <Modal.Content Form>
             <Form onSubmit={this.handleSubmit}>
               <Form.Field>
@@ -137,6 +136,35 @@ class GigCreate extends Component {
                   placeholder='Describe the gig.'
                 />
               </Form.Field>
+              <Form.Group
+                inline
+                required>
+                <label>Public or Private Event</label>
+                <Form.Radio
+                  label='Public'
+                  value='Public'
+                  checked={this.state.visibility === true}
+                  onChange={this.handleChange}
+                />
+                <Form.Radio
+                  label='Private'
+                  value='Private'
+                  checked={this.state.visibility === false}
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Field hidden>
+                <label htmlFor='description'>Queen's ID</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='description'
+                  name='description'
+                  disabled
+                  value={this.state.queen_submitted_to}
+                />
+              </Form.Field>
+
             </Form>
           </Modal.Content>
           <Modal.Actions>

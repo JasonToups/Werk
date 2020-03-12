@@ -34,7 +34,7 @@ class PostFeed extends React.Component {
 
   displayPosts = posts => {
     return posts.map(post => {
-      return <Post key={Math.random() * 10000} post={post} />;
+      return <Post key={Math.random() * 10000} post={post} getPosts={this.getPosts} />;
     });
   };
 
