@@ -1,6 +1,9 @@
+// external imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Image } from 'semantic-ui-react';
+import axios from "axios";
+// internal imports
 import Register from './Modal/ModalRegister';
 import Login from './Modal/ModalLogin';
 import logo from './Werk-Logo.svg';
@@ -9,10 +12,27 @@ import './NavBar.css';
 class NavBar extends Component {
   state = {
     // sets default active item
-    activeItem: 'profile'
+    activeItem: 'profile',
+    userType: ''
   }
   // passes props to the navbar - e=event
   handleItemClick = (e, props) => this.setState({ activeItem: props.name })
+
+  componentDidMount() {
+    const userId = localStorage.getItem('uid');
+
+    axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        this.setState({
+          userType: res.data.data.userType,
+        })
+        console.log(this.state.userType)
+      })
+      .catch(err => {
+        console.log(err.response);
+      })
+  }
 
   render = props => {
     // console.log(this.props)
@@ -29,10 +49,11 @@ class NavBar extends Component {
           <Menu.Menu position='right'>
             {this.props.currentUser ? (
               <>
-                <Menu.Item
-                  name='create post'
-                />
-
+                {this.state.userType === "Queen" ? (
+                  <Menu.Item
+                    name='create post'
+                  />
+                ) : ''}
                 <Menu.Item
                   name='profile'
                   onClick={this.handleItemClick}
