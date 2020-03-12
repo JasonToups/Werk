@@ -61,7 +61,7 @@ class CreatePost extends Component {
   close = () => {
     this.setState({ show: false })
   }
-  //TODO change button to an icon
+
   render() {
     return (
       <>

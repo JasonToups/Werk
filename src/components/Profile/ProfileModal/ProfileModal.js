@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, } from 'semantic-ui-react'
+import { Button, Modal, Form, Input } from 'semantic-ui-react'
 import axios from 'axios'
 import Profile from '../Profile'
 
@@ -83,127 +83,120 @@ class ProfileModal extends Component {
   render() {
     return (
       <>
-        <button className="profile-edit" onClick={this.open}> Edit your profile!</button>
-        <Modal open={this.state.show} onClose={this.close}>
+        <button
+          className="profile-edit"
+          onClick={this.open}> Edit your profile!</button>
+        <Modal
+          open={this.state.show}
+          onClose={this.close}>
           <Modal.Header>Edit your profile!</Modal.Header>
           <Modal.Content Form>
-            <div className='container mt-4'>
-              <div className='row'>
-                <div className='col-md-4 offset-md-4'>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Group inline required>
-                      <label>User Type</label>
-                      <Form.Radio
-                        label='Queen'
-                        value='Queen'
-                        defaultChecked
-                        checked={this.state.userType === 'Queen'}
-                        onChange={this.handleRadioChange}
-                      />
-                      <Form.Radio
-                        label='Fan'
-                        value='Fan'
-                        checked={this.state.userType === 'Fan'}
-                        onChange={this.handleRadioChange}
-                      />
-                    </Form.Group>
-                    <Form.Field>
-                      <label htmlFor='userImage'>Profile Image URL</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='userImage'
-                        name='userImage'
-                        placeholder={this.state.profile.userImage}
-                        value={this.state.userImage}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='name'>Name</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='name'
-                        name='name'
-                        placeholder={this.state.profile.name}
-                        value={this.state.name}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='email'>Email</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='email'
-                        id='email'
-                        name='email'
-                        placeholder={this.state.profile.email}
-                        value={this.state.email}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='homeCity'>Home City</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='homeCity'
-                        name='homeCity'
-                        placeholder={this.state.profile.homeCity}
-                        value={this.state.homeCity}
-                      />
-                    </Form.Field>
-                    {this.state.profile.userType === "Queen" ? (
-                      <>
-                        <Form.Field>
-                          <label htmlFor='gigAppearanceFee'>Appearance Fee</label>
-                          <input
-                            onChange={this.handleChange}
-                            className='form-control form-control-lg'
-                            type='number'
-                            id='gigAppearanceFee'
-                            name='gigAppearanceFee'
-                            placeholder={this.state.profile.gigAppearanceFee}
-                            value={this.state.gigAppearanceFee}
-                          />
-                        </Form.Field>
-                        <Form.Field>
-                          <label htmlFor='gigPerformanceFee'>Performance Fee</label>
-                          <input
-                            onChange={this.handleChange}
-                            className='form-control form-control-lg'
-                            type='number'
-                            id='gigPerformanceFee'
-                            name='gigPerformanceFee'
-                            placeholder={this.state.profile.gigPerformanceFee}
-                            value={this.state.gigPerformanceFee}
-                          />
-                        </Form.Field>
-                        <Form.Field>
-                          <label htmlFor='gigRequirementDescription'>Gig Requirements</label>
-                          <input
-                            onChange={this.handleChange}
-                            className='form-control form-control-lg'
-                            type='text'
-                            id='gigRequirementDescription'
-                            name='gigRequirementDescription'
-                            placeholder={this.state.profile.gigRequirementDescription}
-                            value={this.state.gigRequirementDescription}
-                          />
-                        </Form.Field>
-                      </>
-                    ) : ''}
-                  </Form>
-                </div>
-              </div>
-            </div>
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Group inline required>
+                <label>User Type</label>
+                <Form.Radio
+                  label='Queen'
+                  value='Queen'
+                  defaultChecked
+                  checked={this.state.userType === 'Queen'}
+                  onChange={this.handleRadioChange}
+                />
+                <Form.Radio
+                  label='Fan'
+                  value='Fan'
+                  checked={this.state.userType === 'Fan'}
+                  onChange={this.handleRadioChange}
+                />
+              </Form.Group>
+              <Form.Field>
+                <label htmlFor='userImage'>Profile Image URL</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='text'
+                  id='userImage'
+                  name='userImage'
+                  placeholder={this.state.profile.userImage}
+                  value={this.state.userImage}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='name'>Name</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='text'
+                  id='name'
+                  name='name'
+                  placeholder={this.state.profile.name}
+                  value={this.state.name}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='email'>Email</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='email'
+                  id='email'
+                  name='email'
+                  placeholder={this.state.profile.email}
+                  value={this.state.email}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='homeCity'>Home City</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='text'
+                  id='homeCity'
+                  name='homeCity'
+                  placeholder={this.state.profile.homeCity}
+                  value={this.state.homeCity}
+                />
+              </Form.Field>
+              {this.state.profile.userType === "Queen" ? (
+                <>
+                  <Form.Field>
+                    <label htmlFor='gigAppearanceFee'>Appearance Fee</label>
+                    <Input
+                      onChange={this.handleChange}
+                      type='number'
+                      id='gigAppearanceFee'
+                      name='gigAppearanceFee'
+                      placeholder={this.state.profile.gigAppearanceFee}
+                      value={this.state.gigAppearanceFee}
+                    />
+                  </Form.Field>
+                  <Form.Field>
+                    <label htmlFor='gigPerformanceFee'>Performance Fee</label>
+                    <Input
+                      onChange={this.handleChange}
+                      type='number'
+                      id='gigPerformanceFee'
+                      name='gigPerformanceFee'
+                      placeholder={this.state.profile.gigPerformanceFee}
+                      value={this.state.gigPerformanceFee}
+                    />
+                  </Form.Field>
+                  <Form.Field>
+                    <label htmlFor='gigRequirementDescription'>Gig Requirements</label>
+                    <input
+                      onChange={this.handleChange}
+                      type='text'
+                      id='gigRequirementDescription'
+                      name='gigRequirementDescription'
+                      placeholder={this.state.profile.gigRequirementDescription}
+                      value={this.state.gigRequirementDescription}
+                    />
+                  </Form.Field>
+                </>
+              ) : ''}
+            </Form>
           </Modal.Content>
           <Modal.Actions>
-            <button className='btn btn-primary float-right' onClick={this.handleSubmit}>
+            <Button
+              color='green'
+              onClick={this.handleSubmit}>
               Save
-              </button>
+              </Button>
           </Modal.Actions>
         </Modal>
       </>
