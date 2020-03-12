@@ -10,7 +10,7 @@ class PostFeed extends React.Component {
     axios
       .get(`${process.env.REACT_APP_API_URL}/posts`, { withCredentials: true })
       .then(res => {
-        // console.log(`axios response`, res);
+        console.log(`axios response`, res);
         this.setState({
           posts: res.data.data
         });

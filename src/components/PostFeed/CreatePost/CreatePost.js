@@ -75,44 +75,38 @@ class CreatePost extends Component {
           onClose={this.close}>
           <Modal.Header>Create a Post!</Modal.Header>
           <Modal.Content Form>
-            <div className='container mt-4'>
-              <div className='row'>
-                <div className='col-md-4 offset-md-4'>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Field>
-                      <label htmlFor='name'>Name</label>
-                      <Input
-                        onChange={this.handleChange}
-                        type='string'
-                        id='name'
-                        name='name'
-                        value={this.state.name}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='image'>Image URL</label>
-                      <Input
-                        onChange={this.handleChange}
-                        type='string'
-                        id='image'
-                        name='image'
-                        placeholder='Enter an image URL'
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='description'>Description</label>
-                      <Input
-                        onChange={this.handleChange}
-                        type='string'
-                        id='description'
-                        name='description'
-                        placeholder='Enter a description'
-                      />
-                    </Form.Field>
-                  </Form>
-                </div>
-              </div>
-            </div>
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Field>
+                <label htmlFor='name'>Name</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='name'
+                  name='name'
+                  value={this.state.name}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='image'>Image URL</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='image'
+                  name='image'
+                  placeholder='Enter an image URL'
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='description'>Description</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='description'
+                  name='description'
+                  placeholder='Enter a description'
+                />
+              </Form.Field>
+            </Form>
           </Modal.Content>
           <Modal.Actions>
             <Button

@@ -7,8 +7,12 @@ import { Button, Modal, Form, Input, Icon } from "semantic-ui-react";
 class GigCreate extends Component {
   state = {
     queen_submitted_to: "",
+    name_of_queen: '',
+    gig_appearance_fee: 0,
+    gig_performance_fee: 0,
+    gig_requirement_description: "",
     user_submitted_from: "",
-    name: "",
+    name_of_gig: "",
     address: "",
     date_of_gig: "",
     cost: 0,
@@ -21,18 +25,33 @@ class GigCreate extends Component {
   componentDidMount() {
     const userId = localStorage.getItem('uid');
 
-    axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
+    this.getUser(userId, 'user');
+    this.getUser(this.props.user_submitted_from, 'queen');
+
+  }
+
+  getUser = (id, type) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`, { withCredentials: true })
       .then(res => {
         console.log(res);
-        this.setState({
-          user_submitted_from: userId,
-          name: res.data.data.name,
-        })
-        console.log(this.state.user_submitted_from)
-        console.log(this.state.name)
+        if (type === "user") {
+          this.setState({
+            user_submitted_from: id,
+            name: res.data.data.name,
+          })
+        }
+        if (type === "queen") {
+          this.setState({
+            queen_submitted_to: id,
+            name_of_queen: res.data.data.name,
+            gig_appearance_fee: res.data.data.gig_appearance_fee,
+            gig_performance_fee: res.data.data.gig_performance_fee,
+            gig_requirement_description: res.data.data.gig_requirement_description,
+          })
+        }
       })
       .catch(err => {
-        console.log(err.response);
+        console.log(err);
       })
   }
 
@@ -45,7 +64,7 @@ class GigCreate extends Component {
   handleSubmit = event => {
     event.preventDefault();
     axios
-      .post(`${process.env.REACT_APP_API_URL}/posts`, this.state, { withCredentials: true })
+      .post(`${process.env.REACT_APP_API_URL}/gigs`, this.state, { withCredentials: true })
       .then(res => {
         console.log(res);
         this.close()
@@ -74,16 +93,59 @@ class GigCreate extends Component {
 
 
   render() {
+    // console.log(this.props.user_submitted_from)
+    //TODO store the queen's id in State, and make an axios call for their profile, and grab the info from there.
     return (
       <>
         <Button
           icon
           color='red'
-          onClick={this.toggleShow}>Book</Button>
+          onClick={this.open}>Book</Button>
         <Modal
           open={this.state.show}
-          onClose={this.toggleShow}>
-          <h1>Gig</h1>
+          onClose={this.close}>
+          <Modal.Header>Book a Queen!</Modal.Header>
+          <Modal.Content Form>
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Field>
+                <label htmlFor='name'>Name of Gig</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='name'
+                  name='name'
+                  placeholder='Name of gig.'
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='image'>Address</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='address'
+                  name='address'
+                  placeholder='Enter the address of the gig.'
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='description'>Description</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='string'
+                  id='description'
+                  name='description'
+                  placeholder='Describe the gig.'
+                />
+              </Form.Field>
+            </Form>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button
+              color='green'
+              onClick={this.handleSubmit}>
+              Submit Gig
+              </Button>
+          </Modal.Actions>
         </Modal>
       </>
     );

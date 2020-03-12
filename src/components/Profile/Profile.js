@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import './Profile.css';
 import ProfileModal from './ProfileModal/ProfileModal';
-
+import PostFeed from '../PostFeed/PostFeed';
 class Profile extends Component {
   state = {
     profile: {},
@@ -12,6 +12,7 @@ class Profile extends Component {
 
   componentDidMount() {
     this.getProfile()
+    // this.getPosts()
   }
 
   setProfileInfo = user => {
@@ -29,16 +30,47 @@ class Profile extends Component {
           profile: res.data.data,
           // posts: postSeed
         })
+        this.getPosts()
       })
       .catch(err => {
         console.log(err.response);
       })
-  }
 
+  }
 
   setProfileState = (event) => {
     this.setState({ [this.profile]: event })
   }
+
+  // getPosts = () => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_API_URL}/posts`, { withCredentials: true })
+  //     .then(res => {
+  //       console.log(`axios response`, res);
+  //       this.setState({
+  //         posts: res.data.data
+  //       });
+  //       // console.log(`state.posts:`, this.state.posts);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  //   this.filterPosts()
+  // };
+
+  // filterPosts = () => {
+  //   console.log('starting filter')
+  //   let returnArray = [];
+  //   const userId = localStorage.getItem('uid');
+  //   for (let i = 0; i < this.state.posts.length; i++) {
+  //     if (this.state.posts[i].user_submitted_from === userId) {
+  //       console.log('found one!');
+  //       returnArray.push(this.state.posts[i])
+  //     }
+  //   }
+  //   this.setState({ posts: returnArray })
+  //   console.log(this.state.posts)
+  // }
 
   render() {
     console.log("render profile")
@@ -76,6 +108,7 @@ class Profile extends Component {
             <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
           </div>
         ) : ''}
+        <PostFeed />
       </>
     )
   }

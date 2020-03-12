@@ -53,17 +53,18 @@ class Post extends Component {
           </div>
         </div>
         <div className={`post-body ${this.state.show ? 'show' : ''}`}>
-          <p>{description}</p>
-          <div className="button-container">
-            <Input
-              type="number"
-              placeholder='tip your queen' />
-            <Button
-              className="post-button-tip"
-              type='submit'
-              color='red'>tip</Button>
-            <GigCreate />
-          </div>
+          {localStorage.getItem('uid') ? <><p>{description}</p>
+            <div className="button-container">
+              <Input
+                type="number"
+                placeholder='tip your queen' />
+              <Button
+                className="post-button-tip"
+                type='submit'
+                color='red'>tip</Button>
+              {this.state.show && <GigCreate user_submitted_from={this.props.post.user_submitted_from} />}
+            </div>
+          </> : <p>Login in to Book a Queen!</p>}
         </div>
       </section >
     );

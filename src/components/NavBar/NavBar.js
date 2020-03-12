@@ -22,17 +22,20 @@ class NavBar extends Component {
   componentDidMount() {
     const userId = localStorage.getItem('uid');
 
-    axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
-      .then(res => {
-        console.log(res);
-        this.setState({
-          userType: res.data.data.userType,
+    if (userId) {
+      axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
+        .then(res => {
+          console.log(res);
+          this.setState({
+            userType: res.data.data.userType,
+          })
+          console.log(this.state.userType)
         })
-        console.log(this.state.userType)
-      })
-      .catch(err => {
-        console.log(err.response);
-      })
+        .catch(err => {
+          console.log(err.response);
+        })
+    }
+
   }
 
   render = props => {
