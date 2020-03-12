@@ -11,8 +11,17 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    const userId = localStorage.getItem('uid');
+    this.getProfile()
+  }
 
+  setProfileInfo = user => {
+    this.setState({
+      profile: user
+    });
+  }
+  // TODO use this as the model to update components when state changes. For Navbar.
+  getProfile = () => {
+    const userId = localStorage.getItem('uid');
     axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`, { withCredentials: true })
       .then(res => {
         console.log(res);
@@ -26,10 +35,9 @@ class Profile extends Component {
       })
   }
 
-  setProfileInfo = user => {
-    this.setState({
-      profile: user
-    });
+
+  setProfileState = (event) => {
+    this.setState({ [this.profile]: event })
   }
 
   render() {
@@ -39,7 +47,8 @@ class Profile extends Component {
       <>
         <div className="profile-header">
           <h1 className="profile-header-text">Profile</h1>
-          <ProfileModal />
+          <ProfileModal
+            getProfile={this.getProfile} />
         </div>
         <br></br>
         {this.state.profile.userImage ?

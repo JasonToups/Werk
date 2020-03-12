@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, } from 'semantic-ui-react';
+import { Button, Modal, Form, Input, Icon } from 'semantic-ui-react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import '../../NavBar/Modal/Modal.css';
@@ -61,11 +61,14 @@ class CreatePost extends Component {
   close = () => {
     this.setState({ show: false })
   }
-
+  //TODO change button to an icon
   render() {
     return (
       <>
-        <Button onClick={this.open}> Create Post</Button>
+        <Button
+          icon
+          color='green'
+          onClick={this.open}><Icon name="plus" /></Button>
         <Modal open={this.state.show} onClose={this.close}>
           <Modal.Header>Create a Post!</Modal.Header>
           <Modal.Content Form>
@@ -75,33 +78,30 @@ class CreatePost extends Component {
                   <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                       <label htmlFor='name'>Name</label>
-                      <input
+                      <Input
                         onChange={this.handleChange}
                         type='string'
                         id='name'
-                        className='form-control form-control-lg'
                         name='name'
                         value={this.state.name}
                       />
                     </Form.Field>
                     <Form.Field>
                       <label htmlFor='image'>Image URL</label>
-                      <input
+                      <Input
                         onChange={this.handleChange}
                         type='string'
                         id='image'
-                        className='form-control form-control-lg'
                         name='image'
                         placeholder='Enter an image URL'
                       />
                     </Form.Field>
                     <Form.Field>
                       <label htmlFor='description'>Description</label>
-                      <input
+                      <Input
                         onChange={this.handleChange}
                         type='string'
                         id='description'
-                        className='form-control form-control-lg'
                         name='description'
                         placeholder='Enter a description'
                       />
@@ -112,9 +112,11 @@ class CreatePost extends Component {
             </div>
           </Modal.Content>
           <Modal.Actions>
-            <button className='btn btn-primary float-right' onClick={this.handleSubmit}>
+            <Button
+              color='green'
+              onClick={this.handleSubmit}>
               Create Post
-              </button>
+              </Button>
           </Modal.Actions>
         </Modal>
       </>

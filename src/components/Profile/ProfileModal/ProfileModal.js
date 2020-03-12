@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, } from 'semantic-ui-react';
+import { Button, Modal, Form, } from 'semantic-ui-react'
 import axios from 'axios'
+import Profile from '../Profile'
 
 class ProfileModal extends Component {
   state = {
@@ -49,6 +50,7 @@ class ProfileModal extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+
   }; // makes the form fillable
 
   handleRadioChange = (e, { value }) => this.setState({ userType: value })
@@ -61,8 +63,9 @@ class ProfileModal extends Component {
     axios.put(`${process.env.REACT_APP_API_URL}/users/${userId}`, this.state)
       .then(res => {
         console.log(res);
-        this.close()
-        // what's this?
+        this.close();
+        this.props.getProfile();
+        // directs user to profile after submit
         this.props.history.push('/profile');
       }).catch(err => {
         console.log(err.response);

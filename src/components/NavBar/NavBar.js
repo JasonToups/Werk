@@ -1,7 +1,7 @@
 // external imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Image } from 'semantic-ui-react';
+import { Menu, Image, Button, Icon } from 'semantic-ui-react';
 import axios from "axios";
 // internal imports
 import Register from './Modal/ModalRegister';
@@ -55,6 +55,16 @@ class NavBar extends Component {
                     <CreatePost />
                   </Menu.Item>
                 ) : ''}
+                <Menu.Item>
+                  <Button
+                    icon
+                    color='black'
+                    onClick={this.open}>
+                    <Icon
+                      size='large'
+                      name="mail" />
+                  </Button>
+                </Menu.Item>
                 <Menu.Item
                   name='profile'
                   onClick={this.handleItemClick}
