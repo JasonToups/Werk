@@ -42,36 +42,6 @@ class Profile extends Component {
     this.setState({ [this.profile]: event })
   }
 
-  // getPosts = () => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/posts`, { withCredentials: true })
-  //     .then(res => {
-  //       console.log(`axios response`, res);
-  //       this.setState({
-  //         posts: res.data.data
-  //       });
-  //       // console.log(`state.posts:`, this.state.posts);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  //   this.filterPosts()
-  // };
-
-  // filterPosts = () => {
-  //   console.log('starting filter')
-  //   let returnArray = [];
-  //   const userId = localStorage.getItem('uid');
-  //   for (let i = 0; i < this.state.posts.length; i++) {
-  //     if (this.state.posts[i].user_submitted_from === userId) {
-  //       console.log('found one!');
-  //       returnArray.push(this.state.posts[i])
-  //     }
-  //   }
-  //   this.setState({ posts: returnArray })
-  //   console.log(this.state.posts)
-  // }
-
   render() {
     console.log("render profile")
     console.log(this.state.profile)
@@ -106,9 +76,9 @@ class Profile extends Component {
             <h3>Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
             <h3>Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
             <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
+            <hr></hr>
           </div>
         ) : ''}
-        <PostFeed />
       </>
     )
   }

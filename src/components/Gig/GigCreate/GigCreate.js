@@ -98,7 +98,7 @@ class GigCreate extends Component {
       <>
         <Button
           icon
-          color='red'
+          color='purple'
           onClick={this.open}>Book</Button>
         <Modal
           open={this.state.show}
