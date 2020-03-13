@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Button, Modal, Form, } from 'semantic-ui-react';
+import { Button, Modal, Form, Input, Radio } from 'semantic-ui-react';
 import axios from 'axios'
 
 class Register extends Component {
   state = {
+    userType: '',
     name: '',
     email: '',
     password: '',
@@ -16,6 +17,9 @@ class Register extends Component {
       [event.target.name]: event.target.value
     });
   }; // makes the form fillable
+
+  handleRadioChange = (e, { value }) => this.setState({ userType: value })
+
 
   handleSubmit = event => {
     event.preventDefault()
@@ -45,63 +49,71 @@ class Register extends Component {
         <Modal open={this.state.show} onClose={this.close}>
           <Modal.Header>Register for an Account!</Modal.Header>
           <Modal.Content Form>
-            <div className='container mt-4'>
-              <div className='row'>
-                <div className='col-md-4 offset-md-4'>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Field>
-                      <label htmlFor='name'>Name</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='name'
-                        name='name'
-                        value={this.state.name}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='name'>Email</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='email'
-                        id='email'
-                        name='email'
-                        value={this.state.email}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='name'>Password</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='password'
-                        id='password'
-                        name='password'
-                        value={this.state.password}
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <label htmlFor='password2'>Confirm Password</label>
-                      <input
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='password'
-                        id='password2'
-                        name='password2'
-                        value={this.state.password2}
-                      />
-                    </Form.Field>
-                  </Form>
-                </div>
-              </div>
-            </div>
+            <Form onSubmit={this.handleSubmit} >
+              <Form.Group inline required>
+                <label>User Type</label>
+                <Form.Radio
+                  label='Queen'
+                  value='Queen'
+                  checked={this.state.userType === 'Queen'}
+                  onChange={this.handleRadioChange}
+                />
+                <Form.Radio
+                  label='Fan'
+                  value='Fan'
+                  checked={this.state.userType === 'Fan'}
+                  onChange={this.handleRadioChange}
+                />
+              </Form.Group>
+              <Form.Field required>
+                <label htmlFor='name'>Name</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='text'
+                  id='name'
+                  name='name'
+                  value={this.state.name}
+                />
+              </Form.Field>
+              <Form.Field required>
+                <label htmlFor='name'>Email</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='email'
+                  id='email'
+                  name='email'
+                  value={this.state.email}
+                />
+              </Form.Field>
+              <Form.Field required>
+                <label htmlFor='name'>Password</label>
+                <Input
+                  onChange={this.handleChange}
+                  type='password'
+                  id='password'
+                  name='password'
+                  value={this.state.password}
+                />
+              </Form.Field>
+              <Form.Field required>
+                <label htmlFor='password2'>Confirm Password</label>
+                <Input
+                  onChange={this.handleChange}
+                  className='form-control form-control-lg'
+                  type='password'
+                  id='password2'
+                  name='password2'
+                  value={this.state.password2}
+                />
+              </Form.Field>
+            </Form>
           </Modal.Content>
           <Modal.Actions>
-            <button className='btn btn-primary float-right' onClick={this.handleSubmit}>
+            <Button
+              color='green'
+              onClick={this.handleSubmit}>
               Register
-              </button>
+              </Button>
           </Modal.Actions>
         </Modal>
       </>

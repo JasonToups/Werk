@@ -6,6 +6,7 @@ import { Header, Container } from 'semantic-ui-react';
 import NavBar from './components/NavBar/NavBar'
 import PostFeed from './components/PostFeed/PostFeed'
 import './App.css';
+import Routes from './config/routes'
 
 class App extends Component {
   state = {
@@ -39,7 +40,10 @@ class App extends Component {
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
             logout={this.logout}></NavBar>
-          <PostFeed />
+          <Routes
+            currentUser={this.state.currentUser}
+            setCurrentUser={this.setCurrentUser}
+          />
         </div>
       </>
     )

@@ -14,7 +14,7 @@ class PostFeed extends React.Component {
         this.setState({
           posts: res.data.data
         });
-        console.log(`state.posts:`, this.state.posts);
+        // console.log(`state.posts:`, this.state.posts);
       })
       .catch(err => {
         console.log(err);
@@ -30,14 +30,9 @@ class PostFeed extends React.Component {
     this.getPosts();
   }
 
-  // TODO Update displayPosts() to pass the City ID from Cities to search for the posts that match the City ID.
-  // TODO update displayPosts() to filter the posts by city.
-  // The return posts do not have a city property.
-  // TODO how do I get the posts from the city?
-
   displayPosts = posts => {
     return posts.map(post => {
-      return <Post key={Math.random() * 10000} post={post} />;
+      return <Post key={Math.random() * 10000} post={post} getPosts={this.getPosts} />;
     });
   };
 
