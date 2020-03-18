@@ -69,7 +69,9 @@ class Post extends Component {
         <div className={`post-body ${this.state.show ? 'show' : ''}`}>
           {localStorage.getItem('uid') ? <><p>{description}</p>
             <div className="button-container">
-              {this.state.show && <GigCreate user_submitted_from={this.props.post.user_submitted_from} />}
+              {this.state.show &&
+                <GigCreate
+                  user_submitted_from={this.props.post.user_submitted_from} />}
               <Input
                 size='small'
                 type="number"
