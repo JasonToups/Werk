@@ -70,14 +70,17 @@ class Profile extends Component {
           <h3>HomeCity: {this.state.profile.homeCity}</h3>
         </div>
         {this.state.profile.userType === "Queen" ? (
-          <div className="profile-gig-requirements">
-            <hr></hr>
-            <h1>Gig Requirements</h1>
-            <h3>Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
-            <h3>Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
-            <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
-            <hr></hr>
-          </div>
+          <>
+            <div className="profile-gig-requirements">
+              <hr></hr>
+              <h1>Gig Requirements</h1>
+              <h3>Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
+              <h3>Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
+              <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
+              <hr></hr>
+            </div>
+            <PostFeed getUserPosts />
+          </>
         ) : ''}
       </>
     )
