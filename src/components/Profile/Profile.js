@@ -79,7 +79,7 @@ class Profile extends Component {
               <h3>Requirements: {this.state.profile.gigRequirementDescription}</h3>
               <hr></hr>
             </div>
-            <PostFeed getUserPosts />
+            {/* <PostFeed getUserPosts /> */}
           </>
         ) : ''}
       </>
