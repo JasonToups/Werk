@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Profile.css';
 import ProfileModal from './ProfileModal/ProfileModal';
+import MyPostFeed from './MyPostFeed/MyPostFeed';
 class Profile extends Component {
 	state = {
 		profile: {},
@@ -85,7 +86,7 @@ class Profile extends Component {
 							</h3>
 							<hr></hr>
 						</div>
-						{/* <PostFeed getUserPosts /> */}
+						<MyPostFeed />
 					</>
 				) : (
 					''
