@@ -54,6 +54,7 @@ class Profile extends Component {
 					<ProfileModal getProfile={this.getProfile} />
 				</div>
 				<br></br>
+				<hr></hr>
 				{this.state.profile.userImage ? (
 					<div className='profile-image-container'>
 						<img
@@ -66,7 +67,6 @@ class Profile extends Component {
 					''
 				)}
 				<div className='profile-info'>
-					<hr></hr>
 					<h1>
 						Name: <span>{this.state.profile.name}</span>
 					</h1>
