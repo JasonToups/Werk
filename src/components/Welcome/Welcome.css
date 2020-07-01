@@ -30,3 +30,25 @@ header {
 	left: 50%;
 	transform: translate(-50%, -40%);
 }
+
+#ready {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 3em;
+}
+
+#werk {
+	font-family: 'Knewave';
+	font-size: 4em;
+}
+
+#yas {
+	width: 183px;
+	height: 55px;
+	border-radius: 14px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+	background-color: #ac5fd0;
+	margin-top: 1em;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 2em;
+	cursor: pointer;
+}
