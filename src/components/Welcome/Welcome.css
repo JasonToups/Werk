@@ -1,4 +1,5 @@
-h1 {
+h1,
+p {
 	color: white;
 }
 
@@ -51,4 +52,47 @@ header {
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	font-size: 2em;
 	cursor: pointer;
+}
+
+.overview {
+	display: grid;
+	height: 400px;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 50vh;
+	text-align: left;
+	padding-left: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.join-the-queens h1 {
+	font-weight: 100;
+}
+.join-the-queens p {
+	font-weight: 600;
+}
+
+.column {
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 10px;
+}
+
+.data {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	text-align: center;
+}
+
+.data-col {
+	padding: 0 10px;
+}
+
+.data-col h1 {
+	font-size: 4em;
+	font-weight: 100;
+}
+
+.data-col p {
+	font-size: 1.5em;
+	font-weight: 600;
 }
