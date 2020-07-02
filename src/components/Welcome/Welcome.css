@@ -85,7 +85,9 @@ header {
 
 .data {
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
+	align-items: center;
+	/* grid-template-columns: 33% 33% 33%; */
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	/* grid-auto-flow: column; */
 	text-align: center;
 }

@@ -34,10 +34,10 @@ class Welcome extends Component {
 							you can give.
 						</p>
 					</div>
-					<div className='column data'>
+					<div className='data'>
 						<div className='data-col'>
 							<h1>145</h1>
-							<p>Queens in the community</p>
+							<p>Queens online</p>
 						</div>
 						<div className='data-col'>
 							<h1>$35k</h1>
