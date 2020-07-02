@@ -9,7 +9,7 @@ class Welcome extends Component {
 		return (
 			<>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Knewave&family=Roboto:wght@300;400&display=swap'
+					href='https://fonts.googleapis.com/css2?family=Knewave&family=Roboto&family=Quicksand&display=swap'
 					rel='stylesheet'
 				/>
 				<header>
@@ -27,7 +27,7 @@ class Welcome extends Component {
 							<br></br>
 							<br></br>
 							Can’t get out to a drag show? Tip them from the comfort of your
-							own home.<br></br>
+							home.<br></br>
 							<br></br> Need a Queen for your event? Send them a booking
 							request.<br></br>
 							<br></br> Queens work hard for the money and they deserve anything
@@ -40,7 +40,7 @@ class Welcome extends Component {
 							<p>Queens in the community</p>
 						</div>
 						<div className='data-col'>
-							<h1>$135k</h1>
+							<h1>$35k</h1>
 							<p>Tips collected</p>
 						</div>
 						<div className='data-col'>
