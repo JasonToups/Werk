@@ -21,7 +21,7 @@ header {
 		),
 		url('./ineedahero-edit.gif'); /* The least supported option. */
 	background-repeat: no-repeat;
-	background-size: 100vw;
+	background-size: cover;
 }
 
 .hero-header-text {
