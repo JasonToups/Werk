@@ -51,20 +51,22 @@ class Welcome extends Component {
 				</section>
 				<section className='queen-or-fan'>
 					<h1>Are you a Queen or a Fan?</h1>
-					<div className='queen-col'>
-						<h1>Queens</h1>
-						<p>
-							Queens can post images from their performances. They can save
-							their gig requirements. They can accept gig requests, and accept
-							tips.
-						</p>
-					</div>
-					<div className='queen-col'>
-						<h1>Fans</h1>
-						<p>
-							Fans can tip or follow Queens. Fans can send gig requests to
-							queens, and tip them.
-						</p>
+					<div className='queen-or-fan-detail'>
+						<div>
+							<h1>Queens</h1>
+							<p>
+								Queens can post images from their performances. They can save
+								their gig requirements. They can accept gig requests, and accept
+								tips.
+							</p>
+						</div>
+						<div>
+							<h1>Fans</h1>
+							<p>
+								Fans can tip or follow Queens. Fans can send gig requests to
+								queens, and tip them.
+							</p>
+						</div>
 					</div>
 				</section>
 			</>

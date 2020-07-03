@@ -89,7 +89,8 @@ header {
 
 .data {
 	display: grid;
-	align-items: center;
+	align-items: top;
+	padding: 10px;
 	/* grid-template-columns: 33% 33% 33%; */
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	/* grid-auto-flow: column; */
@@ -111,6 +112,24 @@ header {
 }
 
 .queen-or-fan {
-	height: 300px;
+	height: auto;
 	background-image: linear-gradient(113deg, #fe6c6f 0%, #b40712 99%);
+	display: grid;
+	align-items: center;
+	padding: 20px;
+}
+
+.queen-or-fan-detail {
+	display: grid;
+	align-items: top;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	padding: 10px 0px;
+}
+
+.queen-or-fan-detail h1 {
+	margin: 0;
+	font-family: 'Knewave';
+}
+.queen-or-fan-detail p {
+	padding-bottom: 15px;
 }
