@@ -28,7 +28,7 @@ class Register extends Component {
 			.then(res => {
 				console.log(res);
 				this.close();
-				this.props.history.push('/login');
+				this.props.history.push('/werk/login');
 			})
 			.catch(err => {
 				console.log(err.response);

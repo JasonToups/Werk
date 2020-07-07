@@ -1,6 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Welcome.css';
 import Register from '../NavBar/Modal/ModalRegister';
 

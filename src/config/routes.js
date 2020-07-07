@@ -7,14 +7,14 @@ import Welcome from '../components/Welcome/Welcome';
 
 export default ({ currentUser, setCurrentUser }) => (
 	<Switch>
-		<Route exact path='/' component={currentUser ? PostFeed : Welcome} />
+		<Route exact path='/werk' component={currentUser ? PostFeed : Welcome} />
 		<Route
-			path='/login'
+			path='/werk/login'
 			render={() => (
 				<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
 			)}
 		/>
-		<Route exact path='/postfeed' component={PostFeed} />
-		<Route path='/profile' component={Profile} />
+		<Route exact path='/werk/postfeed' component={PostFeed} />
+		<Route path='/werk/profile' component={Profile} />
 	</Switch>
 );

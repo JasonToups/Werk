@@ -46,7 +46,7 @@ class NavBar extends Component {
 			<div className='navbar'>
 				<Menu inverted>
 					<Menu.Item header>
-						<Image src={logo} as='a' size='small' href='/'></Image>
+						<Image src={logo} as='a' size='small' href='/werk'></Image>
 					</Menu.Item>
 					<Menu.Menu position='right'>
 						{this.props.currentUser ? (
@@ -64,12 +64,13 @@ class NavBar extends Component {
 									</Button>
 								</Menu.Item>
 								<Menu.Item name='profile' onClick={this.handleItemClick}>
-									<Link to='/profile'>Profile</Link>
+									<Link to='/werk/profile'>Profile</Link>
 								</Menu.Item>
 								<Menu.Item
-									name='logout'
 									active={activeItem === 'logout'}
-									onClick={this.props.logout}></Menu.Item>
+									onClick={this.props.logout}>
+									<Link to='/werk'>Logout</Link>
+								</Menu.Item>
 							</>
 						) : (
 							<>
