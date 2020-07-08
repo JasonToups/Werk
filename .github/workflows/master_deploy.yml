@@ -18,6 +18,8 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Deploy to GH Pages
-        run: npm run deploy
+        run: git config --global user.email "me@jasontoups.com"
+          git config --global user.name "JasonToups"
+          npm run deploy
       - name: Deploy Confirmation
         run: echo "Deploy Complete!"
