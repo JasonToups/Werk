@@ -17,10 +17,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Packages
         run: npm install
-      - name: Deploy to GH Pages
+      - name: Store Github Credentials
         run: git config --global user.name "jason-toups"
           git config --global user.email "me@jasontoups.com"
           git remote set-url origin https://github.com/JasonToups/werk.git
-          npm run deploy
+      - name: Deploy to GH Pages
+        run: npm run deploy
       - name: Deploy Confirmation
         run: echo "Deploy Complete!"
