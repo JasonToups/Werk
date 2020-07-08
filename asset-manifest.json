@@ -1,33 +1,33 @@
 {
   "files": {
-    "main.css": "https://jasontoups.github.io/werk/static/css/main.ccf86dad.chunk.css",
-    "main.js": "https://jasontoups.github.io/werk/static/js/main.1dc289ca.chunk.js",
-    "main.js.map": "https://jasontoups.github.io/werk/static/js/main.1dc289ca.chunk.js.map",
+    "main.css": "https://jasontoups.github.io/werk/static/css/main.8e7c6ca1.chunk.css",
+    "main.js": "https://jasontoups.github.io/werk/static/js/main.4135f582.chunk.js",
+    "main.js.map": "https://jasontoups.github.io/werk/static/js/main.4135f582.chunk.js.map",
     "runtime-main.js": "https://jasontoups.github.io/werk/static/js/runtime-main.0dbb3b1e.js",
     "runtime-main.js.map": "https://jasontoups.github.io/werk/static/js/runtime-main.0dbb3b1e.js.map",
     "static/css/2.aeef6221.chunk.css": "https://jasontoups.github.io/werk/static/css/2.aeef6221.chunk.css",
-    "static/js/2.c141f877.chunk.js": "https://jasontoups.github.io/werk/static/js/2.c141f877.chunk.js",
-    "static/js/2.c141f877.chunk.js.map": "https://jasontoups.github.io/werk/static/js/2.c141f877.chunk.js.map",
+    "static/js/2.98b13e5a.chunk.js": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js",
+    "static/js/2.98b13e5a.chunk.js.map": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js.map",
     "index.html": "https://jasontoups.github.io/werk/index.html",
-    "precache-manifest.311d5f1a80abe735facf5041fc809d53.js": "https://jasontoups.github.io/werk/precache-manifest.311d5f1a80abe735facf5041fc809d53.js",
+    "precache-manifest.8377f26c6e369eb613f1f4c6b62cee92.js": "https://jasontoups.github.io/werk/precache-manifest.8377f26c6e369eb613f1f4c6b62cee92.js",
     "service-worker.js": "https://jasontoups.github.io/werk/service-worker.js",
     "static/css/2.aeef6221.chunk.css.map": "https://jasontoups.github.io/werk/static/css/2.aeef6221.chunk.css.map",
-    "static/css/main.ccf86dad.chunk.css.map": "https://jasontoups.github.io/werk/static/css/main.ccf86dad.chunk.css.map",
-    "static/js/2.c141f877.chunk.js.LICENSE.txt": "https://jasontoups.github.io/werk/static/js/2.c141f877.chunk.js.LICENSE.txt",
+    "static/css/main.8e7c6ca1.chunk.css.map": "https://jasontoups.github.io/werk/static/css/main.8e7c6ca1.chunk.css.map",
+    "static/js/2.98b13e5a.chunk.js.LICENSE.txt": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js.LICENSE.txt",
     "static/media/Werk-Logo.svg": "https://jasontoups.github.io/werk/static/media/Werk-Logo.79ae476b.svg",
     "static/media/semantic.min.css": "https://jasontoups.github.io/werk/static/media/outline-icons.ef60a4f6.woff",
     "static/media/dollar-empty.svg": "https://jasontoups.github.io/werk/static/media/dollar-empty.39235e94.svg",
     "static/media/dollar-filled.svg": "https://jasontoups.github.io/werk/static/media/dollar-filled.c5abad70.svg",
+    "static/media/Welcome.css": "https://jasontoups.github.io/werk/static/media/gigi-madonna-1.503de3a2.gif",
     "static/media/heart-empty.svg": "https://jasontoups.github.io/werk/static/media/heart-empty.1ed115c7.svg",
     "static/media/heart-filled.svg": "https://jasontoups.github.io/werk/static/media/heart-filled.5427151c.svg",
-    "static/media/Welcome.css": "https://jasontoups.github.io/werk/static/media/ineedahero-edit.7f054c2a.gif",
     "static/media/index.css": "https://jasontoups.github.io/werk/static/media/repeatablePattern-red.783543eb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0dbb3b1e.js",
     "static/css/2.aeef6221.chunk.css",
-    "static/js/2.c141f877.chunk.js",
-    "static/css/main.ccf86dad.chunk.css",
-    "static/js/main.1dc289ca.chunk.js"
+    "static/js/2.98b13e5a.chunk.js",
+    "static/css/main.8e7c6ca1.chunk.css",
+    "static/js/main.4135f582.chunk.js"
   ]
 }
