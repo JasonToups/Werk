@@ -1,13 +1,32 @@
 # Welcome to Werk!
-This is a gig economy app for drag queens & their fans. 
 
-To start the frontend:
+This is a gig economy app for drag queens & their fans.
+
+## Starting the Frontend
 
     npm start
 
-To update the build on the master branch:
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-    npm run deploy
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+## Creating New Builds
+
+When new commits are pushed to the master branch, the [GitHub Action MasterDeployCI](https://github.com/JasonToups/werk/actions?query=workflow%3AMasterDeployCI) fires off which does the following:
+
+- Creates an Ubuntu virtual environment
+- Clones the repository
+- Starts Node environment
+- Installs Node packages with `npm-install`
+- Logs into GitHub using [Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets)
+- Runs the [gh-pages](https://www.npmjs.com/package/gh-pages) deploy script
+- Sends a confirmation message "Deploy Complete!"
+
+### Current status of Action
+
+![MasterDeployCI](https://github.com/JasonToups/werk/workflows/MasterDeployCI/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
