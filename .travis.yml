@@ -6,8 +6,7 @@
   'cache': { 'directories': ['node_modules'] },
   'install': ['npm install'],
   'script': ['npm run build'],
-  'deploy':
-    [
+  'deploy': [
       {
         'provider': 'pages',
         'strategy': 'git',
@@ -15,7 +14,7 @@
         'on': { 'branch': 'master' },
         'name': 'jasontoups',
         'email': 'me@jasontoups.com',
-        'local_dir': 'docs',
+        # 'local_dir': 'docs',
         'skip_cleanup': true,
         'token': '$GITHUB_TOKEN',
         'keep_history': true,
