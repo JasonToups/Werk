@@ -13,7 +13,7 @@ class Welcome extends Component {
 				/>
 				<header>
 					<section className='hero-header-text'>
-						<h1 id='ready'>ARE YOU READY TO...</h1>
+						<h1 id='ready'>ARE YOU READY TO....</h1>
 						<h1 id='werk'>Werk?</h1>
 						<Register />
 					</section>
