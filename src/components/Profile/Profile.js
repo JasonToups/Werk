@@ -54,8 +54,6 @@ class Profile extends Component {
 					<ProfileModal getProfile={this.getProfile} />
 				</div>
 				<div className='profile'>
-					<br></br>
-					<hr></hr>
 					{this.state.profile.userImage ? (
 						<div className='profile-image-container'>
 							<img
@@ -81,8 +79,8 @@ class Profile extends Component {
 						<div className='profile-gig-requirements'>
 							<hr></hr>
 							<h1>Gig Requirements</h1>
-							<h3>Appearance Fee:{this.state.profile.gigAppearanceFee}</h3>
-							<h3>Performance Fee:{this.state.profile.gigPerformanceFee}</h3>
+							<h3>Appearance Fee: ${this.state.profile.gigAppearanceFee}</h3>
+							<h3>Performance Fee: ${this.state.profile.gigPerformanceFee}</h3>
 							<h3>
 								Requirements: {this.state.profile.gigRequirementDescription}
 							</h3>
