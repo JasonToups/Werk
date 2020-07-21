@@ -14,19 +14,8 @@ You will also see any lint errors in the console.
 
 ## Creating New Builds
 
-When new commits are pushed to the master branch, the [GitHub Action MasterDeployCI](https://github.com/JasonToups/werk/actions?query=workflow%3AMasterDeployCI) fires off which does the following:
-
-- Creates an Ubuntu virtual environment
-- Clones the repository
-- Starts Node environment
-- Installs Node packages with `npm-install`
-- Logs into GitHub using [Secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets)
-- Runs the [gh-pages](https://www.npmjs.com/package/gh-pages) deploy script `NODE_DEBUG=gh-pages npm run deploy`
-- Sends a confirmation message "Deploy Complete!"
-
-### Current status of Action
-
-![MasterDeployCI](https://github.com/JasonToups/werk/workflows/MasterDeployCI/badge.svg)
+When new commits are pushed to the master branch, deploy a build to the gh-pages branch, run:
+`NODE_DEBUG=gh-pages npm run deploy`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

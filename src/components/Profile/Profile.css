@@ -5,6 +5,15 @@
 	position: relative;
 }
 
+.profile {
+	color: white;
+	max-width: 700px;
+	margin: auto;
+	background: RGBA(26, 26, 27, 0.5);
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
 .profile-header-text {
 	align-self: center;
 	font-weight: bolder;
@@ -17,11 +26,16 @@
 
 .profile-image-container {
 	position: relative;
-	width: 50%;
+	width: 100%;
+}
+
+.profile-info {
+	padding: 20px 5px 0 5px;
 }
 
 .profile-image {
 	width: 100%;
+	min-width: 200px;
 	height: var(--post-image-height);
 	object-fit: cover;
 	object-position: top;
@@ -31,10 +45,9 @@ span {
 	font-family: var(--post-header-font);
 }
 
-.profile-info {
-	/* display: flex; */
-	/* float: right; */
-}
-
 .profile-gig-requirements {
+	margin: auto;
+	align-items: left;
+	color: white;
+	max-width: 700px;
 }
