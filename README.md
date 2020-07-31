@@ -63,5 +63,3 @@ You will also see any lint errors in the console.
 When new commits are pushed to the master branch, deploy a build to the gh-pages branch, run:
 
     NODE_DEBUG=gh-pages npm run deploy
-
----
