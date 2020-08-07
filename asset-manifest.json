@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://jasontoups.github.io/werk/static/css/main.ef95d38a.chunk.css",
-    "main.js": "https://jasontoups.github.io/werk/static/js/main.6e04044a.chunk.js",
-    "main.js.map": "https://jasontoups.github.io/werk/static/js/main.6e04044a.chunk.js.map",
+    "main.js": "https://jasontoups.github.io/werk/static/js/main.5020d04f.chunk.js",
+    "main.js.map": "https://jasontoups.github.io/werk/static/js/main.5020d04f.chunk.js.map",
     "runtime-main.js": "https://jasontoups.github.io/werk/static/js/runtime-main.0dbb3b1e.js",
     "runtime-main.js.map": "https://jasontoups.github.io/werk/static/js/runtime-main.0dbb3b1e.js.map",
     "static/css/2.aeef6221.chunk.css": "https://jasontoups.github.io/werk/static/css/2.aeef6221.chunk.css",
     "static/js/2.98b13e5a.chunk.js": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js",
     "static/js/2.98b13e5a.chunk.js.map": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js.map",
     "index.html": "https://jasontoups.github.io/werk/index.html",
-    "precache-manifest.fc0a507e6286fc152a642ae0e6762d35.js": "https://jasontoups.github.io/werk/precache-manifest.fc0a507e6286fc152a642ae0e6762d35.js",
+    "precache-manifest.5d23c66d5451797700a48e4d174efa5a.js": "https://jasontoups.github.io/werk/precache-manifest.5d23c66d5451797700a48e4d174efa5a.js",
     "service-worker.js": "https://jasontoups.github.io/werk/service-worker.js",
     "static/css/2.aeef6221.chunk.css.map": "https://jasontoups.github.io/werk/static/css/2.aeef6221.chunk.css.map",
     "static/css/main.ef95d38a.chunk.css.map": "https://jasontoups.github.io/werk/static/css/main.ef95d38a.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.aeef6221.chunk.css",
     "static/js/2.98b13e5a.chunk.js",
     "static/css/main.ef95d38a.chunk.css",
-    "static/js/main.6e04044a.chunk.js"
+    "static/js/main.5020d04f.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "60490d9dbd44de2faf3227e7a43ecfbe",
+    "revision": "1d3a41d0c7b25885a9f00d6f45e46246",
     "url": "https://jasontoups.github.io/werk/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://jasontoups.github.io/werk/static/css/2.aeef6221.chunk.css"
   },
   {
-    "revision": "740dc2876bc27ead6af7",
+    "revision": "6a665a2d92903d8c0f61",
     "url": "https://jasontoups.github.io/werk/static/css/main.ef95d38a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://jasontoups.github.io/werk/static/js/2.98b13e5a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "740dc2876bc27ead6af7",
-    "url": "https://jasontoups.github.io/werk/static/js/main.6e04044a.chunk.js"
+    "revision": "6a665a2d92903d8c0f61",
+    "url": "https://jasontoups.github.io/werk/static/js/main.5020d04f.chunk.js"
   },
   {
     "revision": "5564e8b0265afee23b2e",
