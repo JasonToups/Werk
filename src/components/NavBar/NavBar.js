@@ -39,6 +39,8 @@ class NavBar extends Component {
     }
   }
 
+  //TODO add the mail menu back when messaging works
+
   render = props => {
     // console.log(this.props)
     const { activeItem } = this.state;
@@ -58,12 +60,11 @@ class NavBar extends Component {
                 ) : (
                   ''
                 )}
-                {/* TODO restore the mail menu item when messaging works.
-                  <Menu.Item>
-									<Button icon color='black' onClick={this.handleItemClick}>
-										<Icon size='large' name='mail' />
-									</Button>
-								</Menu.Item> */}
+                {/* <Menu.Item>
+                  <Button icon color='black' onClick={this.handleItemClick}>
+                    <Icon size='large' name='mail' />
+                  </Button>
+                </Menu.Item> */}
                 <Menu.Item name='profile' onClick={this.handleItemClick}>
                   <Link to='/werk/profile'>Profile</Link>
                 </Menu.Item>
