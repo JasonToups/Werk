@@ -2,8 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import './Welcome.css';
 import Register from '../NavBar/Modal/ModalRegister';
-import Uploader from '../Uploader/Uploader';
-import DisplayImage from '../Uploader/DisplayImage';
 
 class Welcome extends Component {
   render() {
