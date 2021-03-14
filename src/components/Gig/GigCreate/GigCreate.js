@@ -102,7 +102,7 @@ class GigCreate extends Component {
 				</Button>
 				<Modal open={this.state.show} onClose={this.close}>
 					<Modal.Header>Book {this.state.name_of_queen}!</Modal.Header>
-					<Modal.Content Form>
+					<Modal.Content>
 						<Form onSubmit={this.handleSubmit}>
 							<Form.Field>
 								<label htmlFor='name'>Name of Gig</label>
