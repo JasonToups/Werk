@@ -1,7 +1,7 @@
 // external imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Image, Button, Icon } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import axios from 'axios';
 // internal imports
 import Login from './Modal/ModalLogin';

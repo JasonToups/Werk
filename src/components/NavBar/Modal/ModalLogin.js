@@ -48,7 +48,7 @@ class Login extends Component {
 				<h3 onClick={this.open}> Log In!</h3>
 				<Modal open={this.state.show} onClose={this.close}>
 					<Modal.Header>Log In!</Modal.Header>
-					<Modal.Content Form>
+					<Modal.Content>
 						<Form onSubmit={this.handleSubmit}>
 							<Form.Field>
 								<label htmlFor='name'>Email</label>
